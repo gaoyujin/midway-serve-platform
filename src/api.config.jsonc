@@ -1,0 +1,85 @@
+[
+  {
+    "key": "test",
+    "description": "测试服务",
+    "timeout": 5000,
+    "url": "http://10.241.81.35:3001/v1",
+    "middleware": [],
+    "filter": [],
+    "controller": [
+      {
+        "id": "1",
+        "description": "测试接口1",
+        "method": "post",
+        "path": "/user/getUserRole2",
+        "consumes": ["application/json"],
+        "parameters": [],
+        "responsesMode": "noMap",
+        "responses": [],
+        "middleware": [
+          {
+            "name": "TestMiddleware"
+          },
+          {
+            "name": "Test2Middleware"
+          }
+        ],
+        "filter": []
+      },
+      {
+        "id": "2",
+        "description": "测试接口2",
+        "method": "post",
+        "path": "/user/getUserRole",
+        "consumes": ["application/json"],
+        "parameters": [],
+        "responsesMode": "noMap",
+        "responses": [],
+        "middleware": [],
+        "filter": []
+      }
+    ]
+  },
+  {
+    "key": "test2",
+    "description": "测试服务2",
+    "timeout": 5000,
+    "url": "http://10.241.81.35:3001/v1",
+    "beforeMiddleware": [""],
+    "afterMiddleware": [""],
+    "filter": [],
+    "controller": [
+      {
+        "id": "1",
+        "description": "测试接口1",
+        "method": "post",
+        "path": "/user/getUserRole",
+        "consumes": ["application/json"],
+        "parameters": [],
+        "responsesMode": "noMap",
+        "responses": [],
+        "middleware": [
+          {
+            "name": "TestMiddleware"
+          },
+          {
+            "name": "ErrorMiddleware"
+          }
+        ],
+        "filter": []
+      },
+      {
+        "id": "2",
+        "description": "测试接口2",
+        "method": "post",
+        "path": "/user/getUserRole",
+        "consumes": ["application/json"],
+        "parameters": [],
+        "responsesMode": "noMap",
+        "responses": [],
+        "middleware": [],
+        "filter": []
+      }
+    ]
+  }
+]
